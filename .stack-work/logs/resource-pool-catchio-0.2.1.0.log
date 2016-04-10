@@ -1,0 +1,16 @@
+Configuring resource-pool-catchio-0.2.1.0...
+Building resource-pool-catchio-0.2.1.0...
+Preprocessing library resource-pool-catchio-0.2.1.0...
+[1 of 1] Compiling Data.Pool        ( Data/Pool.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Pool.o )
+
+Data/Pool.hs:36:1: Warning:
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+
+Data/Pool.hs:46:1: Warning:
+    Module ‘Prelude’ does not export ‘catch’
+In-place registering resource-pool-catchio-0.2.1.0...
+Installing library in
+/srv/bitcamp-2016/.stack-work/install/x86_64-linux/lts-5.11/7.10.3/lib/x86_64-linux-ghc-7.10.3/resource-pool-catchio-0.2.1.0-ID6yEN88zbvJjya9WklwSY
+Registering resource-pool-catchio-0.2.1.0...

@@ -1,0 +1,5 @@
+no port specified, defaulting to port 8000
+Initializing bitcamp @ /
+Initializing postgresql-simple @ /pg
+
+Listening on http://0.0.0.0:8080/

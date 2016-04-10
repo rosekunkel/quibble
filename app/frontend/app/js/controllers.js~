@@ -1,0 +1,32 @@
+'use strict';
+
+/* Controllers */
+
+var quizApp = angular.module('quizApp', []);
+
+quizApp.controller('ClueListCtrl', ['$scope', 'Clues', function($scope, Clues) {
+  $http.get('/clues/random').success(function(data) {
+    $scope.entry = Clues.query(); 
+    $scope.index = 1;
+    $scope.content = $scope.entry.content[0];
+  });
+
+    $scope.addClue = function() {
+	if($scope.index < $scope.entry.content.length) {
+	    $scope.content = $scope.content + " " +  $scope.entry.content[$scope.index];
+	    $scope.index = $scope.index + 1;
+	}
+    }
+
+    $scope.nextQuestionClick = function() {
+	$scope.index = 1;
+	 $http.get('/clues/random').success(function(data) {
+	     $scope.entry = data; 
+	     $scope.index = 1;
+	 }); 
+
+	$scope.content = $scope.entry.content[0];
+
+    }
+
+}]);

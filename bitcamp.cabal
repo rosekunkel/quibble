@@ -1,0 +1,69 @@
+name:                bitcamp
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.md
+homepage:            https://github.com/githubuser/bitcamp#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2016 Author name here
+category:            Web
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+  build-depends:       base >= 4.7 && < 5
+  default-language:    Haskell2010
+
+executable bitcamp-exe
+  hs-source-dirs:      app/backend
+  main-is:             Main.hs
+  other-modules:       Application
+                     , Site
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , bitcamp
+                     , bytestring
+                     , MonadCatchIO-transformers
+                     , mtl
+                     , transformers
+                     , snap
+                     , snap-core
+                     , snap-server
+                     , snap-loader-static
+                     , snaplet-postgresql-simple
+                     , postgresql-simple
+                     , text
+                     , lens
+                     , raw-strings-qq
+                     , aeson
+  default-language:    Haskell2010
+
+executable packet-parser
+  hs-source-dirs:      app/packet-parser
+  main-is:             Main.hs
+  build-depends:       base
+                     , pandoc
+                     , bytestring
+                     , data-default
+                     , regex-posix
+                     , raw-strings-qq
+                     , postgresql-simple
+  default-language:    Haskell2010
+
+test-suite bitcamp-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , bitcamp
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/githubuser/bitcamp

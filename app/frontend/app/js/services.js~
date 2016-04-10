@@ -1,0 +1,10 @@
+'use strict';
+
+var quizServices = angular.module('quizServices', ['ngResource']);
+
+quizServices.factory('Clues', ['$resource',
+  function($resource){
+    return $resource('clues/random', {}, {
+      query: {method:'GET', isArray:true}
+    });
+  }]);
